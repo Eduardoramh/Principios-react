@@ -1,22 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import HolaMundo from './components/HolaMundo';
+// import HolaMundo, { AdiosMundo } from './components/HolaMundo';
+// ↑↑ Cuando se exporta una funcion de un componente y no es default export, se pone entre corchetes {} ↑↑ 
+import AdiosMundo from './components/AdiosMundo';
+import Saludar from './components/Saludar';
+
 
 function App() {
+  const user = {
+    nombre: "Eduardo Ramírez",
+    edad: 26,
+    color: "Rojo"
+  };
+
+  const saludarFn = name => {
+    console.log("Hola " + name);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Saludar userInfo={user} saludarFn={saludarFn} />
       </header>
     </div>
   );
