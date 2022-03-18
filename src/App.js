@@ -9,7 +9,7 @@ import Saludar from './components/Saludar';
 
 function App() {
   const user = {
-    nombre: "Eduardo Ramírez",
+    
     edad: 26,
     color: "Rojo"
   };
