@@ -1,29 +1,21 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HolaMundo from './components/HolaMundo';
-// import HolaMundo, { AdiosMundo } from './components/HolaMundo';
-// ↑↑ Cuando se exporta una funcion de un componente y no es default export, se pone entre corchetes {} ↑↑ 
-import AdiosMundo from './components/AdiosMundo';
-import Saludar from './components/Saludar';
-
 
 function App() {
-  const user = {
-    nombre: "Eduardo",
-    edad: 21,
-    color: "Rojo"
-  };
+  const [stateCar, setStatecar] = useState(false);
 
-  const saludarFn = (nombre, edad) => {
-    console.log("Hola " + nombre + ", tiene " + edad + " años. ");
-    console.log(`Hola ${nombre}, tiene ${edad} años.`)
+  const encenderApagar = () => {
+    // setStatecar(!stateCar);
+    setStatecar(prevValue => !prevValue);
   };
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Saludar userInfo={user} saludarFn={saludarFn} />
+        <h3>El coche esta: {stateCar ? "Encendido" : "Apagado"}</h3>
+        <button onClick={encenderApagar}>Encender / Apagar</button>
       </header>
     </div>
   );
