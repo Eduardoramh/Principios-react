@@ -9,7 +9,7 @@ export default function Saludar(props) {
         <div>
             {/* <button onClick={() => props.saludarFn(props.userInfo.nombre)}>Saludar</button> */}
             {/* <button onClick={() => saludarFn(userInfo.nombre)}>Saludar</button> */}
-            <button onClick={() => saludarFn(nombre, edad)}>Saludar</button>
+            <button onClick={() => saludarFn(nombre, edad)}>Saludar previamente </button>
         </div>
     );  
 } 
